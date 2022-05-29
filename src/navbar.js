@@ -1,7 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux'
 
-export class Navbar extends Component {
-  render() {
+const Navbar = () => {
+const amount = useSelector(state => state.amount)
+  //  const state1 = useSelector(state => state)
+    
     return (
       <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,13 +21,12 @@ export class Navbar extends Component {
       
     </ul>
 
-    <button type="button" name="" id="" className="btn btn-primary">Your Balance: 0</button>
+    <button type="button" name="" id="" className="btn btn-primary">Your Balance: {amount}</button>
    
   </div>
 </nav>
       </div>
     )
-  }
 }
 
 export default Navbar
